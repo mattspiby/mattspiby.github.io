@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Matthew Spiby — AI Solutions & Automations Developer (Portfolio)</title>
+  <title>Matthew Spiby — Software Project Manager at Highfield Qualifications</title>
   <meta name="description" content="Interactive CV / portfolio for Matthew Spiby — Software Project Manager transitioning to AI Solutions & Automations Developer." />
   <!-- Tailwind Play CDN (no build step) -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -31,11 +31,7 @@
         <p class="mt-1 text-sm text-slate-400">Doncaster, South Yorkshire • matthewspiby@hotmail.com • 07932 886271</p>
       </div>
       <div class="flex gap-3">
-        <a href="#" class="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600/80 hover:bg-indigo-500 rounded-md shadow">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none"><path d="M12 2v20M2 12h20" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Download CV
-        </a>
-        <a href="https://github.com/" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 border border-indigo-600 rounded-md text-indigo-300 hover:bg-indigo-800/40">GitHub</a>
+        <a href="https://github.com/mattspiby" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 border border-indigo-600 rounded-md text-indigo-300 hover:bg-indigo-800/40">GitHub</a>
       </div>
     </header>
 
@@ -138,8 +134,8 @@
             </div>
 
             <div class="p-4 rounded-lg border border-neutral-800">
-              <h4 class="font-semibold">Release & Testing Automation (Concept)</h4>
-              <p class="text-slate-300 mt-1">Designed a CI flow concept for automating builds, running Lighthouse checks and notifying stakeholders on regression. Ready to be implemented using GitHub Actions or Azure Pipelines.</p>
+              <h4 class="font-semibold">Playwright Release & Testing Automation (Concept)</h4>
+              <p class="text-slate-300 mt-1">Designed a CI flow concept for automating test builds, running test cases checks against standard operating procedures for regression purposes. Implemented alongside GitHub Actions for better automation.</p>
               <button data-project="ci" class="mt-3 px-3 py-2 bg-indigo-600 rounded text-sm">View approach</button>
             </div>
           </div>
@@ -185,11 +181,11 @@
 
         <div class="glass p-5 rounded-xl border border-neutral-800">
           <h3 class="text-lg font-semibold">Quick Contact</h3>
-          <p class="mt-2 text-slate-300">matthewspiby@hotmail.com</p>
-          <p class="text-slate-300">07932 886271</p>
+          <p class="mt-2 text-slate-300">matthew.spiby@outlook.com</p>
+          <p class="text-slate-300">07932886271</p>
           <div class="mt-3 flex gap-2">
-            <a href="mailto:matthewspiby@hotmail.com" class="px-3 py-2 bg-indigo-700 rounded">Email</a>
-            <a href="https://www.linkedin.com/" target="_blank" class="px-3 py-2 border border-indigo-600 rounded">LinkedIn</a>
+            <a href="mailto:matthew.spiby@outlook.com" class="px-3 py-2 bg-indigo-700 rounded">Email</a>
+            <a href="https://uk.linkedin.com/in/matthewspiby" target="_blank" class="px-3 py-2 border border-indigo-600 rounded">LinkedIn</a>
           </div>
         </div>
 
@@ -219,9 +215,9 @@
                '<p class="mt-2">Plan: identify repetitive handoffs, create rule-based automations (status → assignee, tag → due date adjustments), and add QA checklists triggered on state changes. Result: reduced manual triage and more developer capacity for feature work.</p>' +
                '<pre class="mt-3 p-3 bg-neutral-900 rounded">Example rule: WHEN task moves to "Ready for QA" → ADD checklist "QA: cross-browser, lighthouse, security scan" → NOTIFY #qa-channel</pre>';
       } else if(key === 'ci'){
-        html = '<h4 class="font-semibold">Release & testing CI concept</h4>' +
+        html = '<h4 class="font-semibold">Playwright Release & testing CI concept</h4>' +
                '<p class="mt-2">Design: use GitHub Actions to run automated builds, run Lighthouse CLI, run unit tests and deploy preview environments. Use status checks to gate releases.</p>' +
-               '<pre class="mt-3 p-3 bg-neutral-900 rounded">Example: "CI pipeline: install → run tests → run lighthouse → if pass → update preview site"</pre>';
+               '<pre class="mt-3 p-3 bg-neutral-900 rounded">Example: "CI pipeline: install → run playwright → run lighthouse → if pass → update preview site"</pre>';
       } else {
         html = '';
       }
