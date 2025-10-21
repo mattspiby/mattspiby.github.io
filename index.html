@@ -231,8 +231,47 @@
     </form>
   </div>
 
-  <script>
-    // Chatbot UI toggling
+    <script>
+    // ==============================
+    // PROJECT DETAIL TOGGLES
+    // ==============================
+    const projectDetail = document.getElementById('projectDetail');
+
+    function showProject(key) {
+      let html = '';
+      if (key === 'wrike') {
+        html = `
+          <h4 class="font-semibold text-lg">Wrike Automation Approach</h4>
+          <p class="mt-2 text-slate-300">
+            Plan: identify repetitive handoffs, create rule-based automations (status → assignee, tag → due date adjustments),
+            and add QA checklists triggered on state changes. Result: reduced manual triage and more developer capacity for feature work.
+          </p>
+          <pre>Example rule: WHEN task moves to "Ready for QA" → ADD checklist "QA: cross-browser, lighthouse, security scan" → NOTIFY #qa-channel</pre>
+        `;
+      } else if (key === 'ci') {
+        html = `
+          <h4 class="font-semibold text-lg">Playwright Release & Testing CI Concept</h4>
+          <p class="mt-2 text-slate-300">
+            Design: use GitHub Actions to run automated builds, execute Playwright test suites, run Lighthouse audits,
+            and deploy preview environments. Use status checks to gate production releases.
+          </p>
+          <pre>Example pipeline:
+install → run playwright → run lighthouse → if pass → deploy preview</pre>
+        `;
+      }
+
+      projectDetail.innerHTML = html;
+      projectDetail.classList.toggle('hidden', !html);
+      projectDetail.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    document.querySelectorAll('button[data-project]').forEach(btn => {
+      btn.addEventListener('click', e => showProject(e.currentTarget.dataset.project));
+    });
+
+    // ==============================
+    // CHATBOT FUNCTIONALITY
+    // ==============================
     const toggleBtn = document.getElementById('chatbot-toggle');
     const chatWin   = document.getElementById('chatbot-window');
     const closeBtn  = document.getElementById('chatbot-close');
@@ -248,20 +287,20 @@
       { q:/agile|sprint|scrum/i, a:"He’s AgilePM Practitioner certified, running sprints with planning, retros, and demos to ensure predictable delivery." },
       { q:/ci|playwright|pipeline/i, a:"He designed a CI pipeline using Playwright + Lighthouse in GitHub Actions to automate testing and deployments." },
       { q:/ai|automation developer/i, a:"He’s transitioning into AI Solutions & Automation Development — focusing on intelligent process orchestration." },
-      { q:/.*/, a:"Unfortuntely, Matt has setup OpenAI Resource yet for his Chatbot to retrieve full-blown chats. But maybe in his new role he can? " }
+      { q:/.*/, a:"Unfortunately, Matt hasn’t connected his Azure OpenAI resource yet for full conversations. Maybe in his next role he will!" }
     ];
 
     form.addEventListener('submit', e => {
       e.preventDefault();
       const text = input.value.trim();
-      if(!text) return;
+      if (!text) return;
       appendMessage('user', text);
       input.value = '';
       const reply = canned.find(r => r.q.test(text))?.a;
       setTimeout(() => appendMessage('bot', reply), 500);
     });
 
-    function appendMessage(sender, text){
+    function appendMessage(sender, text) {
       const div = document.createElement('div');
       div.className = sender === 'user'
         ? 'text-right text-indigo-300'
@@ -271,5 +310,3 @@
       messages.scrollTop = messages.scrollHeight;
     }
   </script>
-</body>
-</html>
