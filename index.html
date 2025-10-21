@@ -8,19 +8,32 @@
   <!-- Tailwind Play CDN (no build step) -->
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Small custom tweaks */
     .glass {
       background: rgba(255,255,255,0.06);
       backdrop-filter: blur(6px);
     }
-    /* timeline dot */
     .dot {
-      width: 14px; height: 14px; border-radius: 9999px; border: 3px solid rgba(99,102,241,1);
+      width: 14px; height: 14px; border-radius: 9999px;
+      border: 3px solid rgba(99,102,241,1);
       background: transparent;
     }
-    pre { font-size: .85rem; }
+    pre {
+      display: block;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-break: break-word;
+      background-color: rgba(17,24,39,0.9);
+      border: 1px solid rgba(31,41,55,0.8);
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
+      color: #e5e7eb;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 0.875rem;
+      margin-top: 0.75rem;
+    }
   </style>
 </head>
+
 <body class="bg-neutral-900 text-slate-100 antialiased leading-relaxed">
   <div class="max-w-5xl mx-auto p-6">
     <!-- header -->
@@ -55,7 +68,6 @@
         <!-- Experience timeline -->
         <article class="glass p-5 rounded-xl border border-neutral-800">
           <h2 class="text-2xl font-semibold">Experience</h2>
-
           <div class="mt-5 space-y-6">
             <!-- Highfield Group -->
             <div class="flex gap-4">
@@ -95,7 +107,6 @@
                 <p class="mt-2 text-slate-300">
                   Managed day-to-day studio operations, project delivery, and team performance. Introduced Wrike as a project management system and implemented automations to drive efficiency and reallocate developer time to billable work.
                 </p>
-
                 <details class="mt-3 text-slate-300">
                   <summary class="cursor-pointer">Key contributions (click to expand)</summary>
                   <ul class="mt-2 list-disc ml-5 space-y-1">
@@ -106,18 +117,6 @@
                 </details>
               </div>
             </div>
-
-            <!-- Earlier roles summary -->
-            <div class="flex gap-4">
-              <div class="flex flex-col items-center">
-                <div class="dot"></div>
-              </div>
-              <div>
-                <h3 class="text-lg font-medium">Earlier Roles</h3>
-                <p class="mt-2 text-slate-300">Experience in studio and operations roles covering team management, client liaison and technical support — with a focus on process, documentation and delivery quality.</p>
-              </div>
-            </div>
-
           </div>
         </article>
 
@@ -140,11 +139,8 @@
             </div>
           </div>
 
-          <div id="projectDetail" class="mt-4 text-slate-300 hidden p-4 border border-neutral-800 rounded">
-            <!-- filled by JS -->
-          </div>
+          <div id="projectDetail" class="mt-4 text-slate-300 hidden p-4 border border-neutral-800 rounded"></div>
         </article>
-
       </section>
 
       <!-- Right column -->
@@ -188,20 +184,11 @@
             <a href="https://uk.linkedin.com/in/matthewspiby" target="_blank" class="px-3 py-2 border border-indigo-600 rounded">LinkedIn</a>
           </div>
         </div>
-
-        <div class="glass p-5 rounded-xl border border-neutral-800">
-          <h3 class="text-lg font-semibold">Mini interactive — Ask about my work</h3>
-          <p class="mt-2 text-slate-300">Type a question to see a structured reply (client-side demo).</p>
-          <input id="qinput" class="w-full mt-2 p-2 rounded bg-neutral-900 border border-neutral-800" placeholder="e.g. How did you automate Wrike?" />
-          <button id="askBtn" class="mt-2 w-full px-3 py-2 bg-indigo-600 rounded">Ask</button>
-
-          <div id="answer" class="mt-3 text-slate-300 hidden p-3 border border-neutral-800 rounded"></div>
-        </div>
       </aside>
     </main>
 
     <footer class="mt-10 text-center text-slate-500 text-sm">
-      Built with ❤️ — Static HTML + Tailwind. For a React/interactive version, I can extend this to include live demos and GitHub Actions-based CI examples.
+      Built with ❤️ — Static HTML + Tailwind. Enhanced with Microsoft Copilot Chat integration.
     </footer>
   </div>
 
@@ -213,13 +200,11 @@
       if(key === 'wrike'){
         html = '<h4 class="font-semibold">Wrike automation approach</h4>' +
                '<p class="mt-2">Plan: identify repetitive handoffs, create rule-based automations (status → assignee, tag → due date adjustments), and add QA checklists triggered on state changes. Result: reduced manual triage and more developer capacity for feature work.</p>' +
-               '<pre class="mt-3 p-3 bg-neutral-900 rounded">Example rule: WHEN task moves to "Ready for QA" → ADD checklist "QA: cross-browser, lighthouse, security scan" → NOTIFY #qa-channel</pre>';
+               '<pre>Example rule: WHEN task moves to "Ready for QA" → ADD checklist "QA: cross-browser, lighthouse, security scan" → NOTIFY #qa-channel</pre>';
       } else if(key === 'ci'){
         html = '<h4 class="font-semibold">Playwright Release & testing CI concept</h4>' +
-               '<p class="mt-2">Design: use GitHub Actions to run automated builds, run Lighthouse CLI, run unit tests and deploy preview environments. Use status checks to gate releases.</p>' +
-               '<pre class="mt-3 p-3 bg-neutral-900 rounded">Example: "CI pipeline: install → run playwright → run lighthouse → if pass → update preview site"</pre>';
-      } else {
-        html = '';
+               '<p class="mt-2">Design: use GitHub Actions to run automated builds, run Playwright tests and Lighthouse CLI, and deploy preview environments. Use status checks to gate releases.</p>' +
+               '<pre>Example:\nCI pipeline: install → run playwright → run lighthouse → if pass → update preview site</pre>';
       }
       projectDetail.innerHTML = html;
       projectDetail.classList.toggle('hidden', !html);
@@ -227,44 +212,34 @@
     }
 
     document.querySelectorAll('button[data-project]').forEach(btn=>{
-      btn.addEventListener('click', e=>{
-        showProject(e.currentTarget.dataset.project);
-      });
+      btn.addEventListener('click', e=>showProject(e.currentTarget.dataset.project));
     });
+  </script>
 
-    // Mini interactive QnA (client-side static)
-    const askBtn = document.getElementById('askBtn');
-    const qinput = document.getElementById('qinput');
-    const answer = document.getElementById('answer');
-
-    const canned = [
-      { q: /wrike|automation/i, a: 'I introduced Wrike and configured automations to reduce manual task triage, auto-assign QA checklists, and trigger notifications — which increased billable time spent on customer projects.' },
-      { q: /agile|sprint|scrum/i, a: 'I apply Agile ceremonies (planning, daily standups, retros) and prioritise backlog grooming to keep delivery predictable. I use PID/SOW documents to ensure clarity during onboarding.' },
-      { q: /ci|pipeline|github actions|lighthouse/i, a: 'I design CI pipelines to run automated tests and Lighthouse audits; for deployment I prefer preview environments and gated merges with status checks.' },
-      { q: /experience|moirae/i, a: 'At Moirae Creative I led the studio, introduced Wrike and proofing/testing processes, and created PIDs and SOWs to improve transparency.' },
-      { q: /default/i, a: 'I combine practical project management with automation-first approaches. If you share the problem, I’ll recommend a lightweight automation or AI-driven approach.' },
-    ];
-
-    function getCannedAnswer(text){
-      for(const row of canned){
-        if(row.q.test(text)) return row.a;
-      }
-      return canned[canned.length-1].a;
-    }
-
-    askBtn.addEventListener('click', ()=>{
-      const q = qinput.value.trim();
-      if(!q) return;
-      answer.textContent = 'Thinking...';
-      answer.classList.remove('hidden');
-      setTimeout(()=>{
-        answer.textContent = getCannedAnswer(q);
-      }, 350);
-    });
-
-    qinput.addEventListener('keydown', (e)=>{
-      if(e.key === 'Enter') askBtn.click();
-    });
+  <!-- Microsoft Copilot Assistant Embed -->
+  <script type="text/javascript">
+    (function () {
+      var copilot = document.createElement("script");
+      copilot.src = "https://copilot.microsoft.com/embed/assistant.js";
+      copilot.async = true;
+      copilot.onload = function () {
+        window.CopilotAssistant.init({
+          id: "copilot-chat",
+          theme: "dark",
+          prompt: "Hi! I'm Matthew’s AI Assistant. Ask me about my projects, automation work, or CV!",
+          style: {
+            position: "fixed",
+            bottom: "20px",
+            right: "20px",
+            width: "360px",
+            height: "480px",
+            borderRadius: "12px",
+            boxShadow: "0 4px 30px rgba(0,0,0,0.4)"
+          }
+        });
+      };
+      document.body.appendChild(copilot);
+    })();
   </script>
 </body>
 </html>
