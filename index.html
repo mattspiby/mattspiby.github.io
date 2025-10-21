@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Matthew Spiby — AI Solutions & Automations Developer (Portfolio)</title>
+  <meta name="description" content="Interactive CV / portfolio for Matthew Spiby — Software Project Manager transitioning to AI Solutions & Automations Developer." />
+  <!-- Tailwind Play CDN (no build step) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Small custom tweaks */
+    .glass {
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(6px);
+    }
+    /* timeline dot */
+    .dot {
+      width: 14px; height: 14px; border-radius: 9999px; border: 3px solid rgba(99,102,241,1);
+      background: transparent;
+    }
+    pre { font-size: .85rem; }
+  </style>
+</head>
+<body class="bg-neutral-900 text-slate-100 antialiased leading-relaxed">
+  <div class="max-w-5xl mx-auto p-6">
+    <!-- header -->
+    <header class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      <div>
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">Matthew <span class="text-indigo-400">Spiby</span></h1>
+        <p class="mt-2 text-indigo-200">AI Solutions & Automations Developer (aspiring) — Software Project Manager</p>
+        <p class="mt-1 text-sm text-slate-400">Doncaster, South Yorkshire • matthewspiby@hotmail.com • 07932 886271</p>
+      </div>
+      <div class="flex gap-3">
+        <a href="#" class="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600/80 hover:bg-indigo-500 rounded-md shadow">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none"><path d="M12 2v20M2 12h20" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Download CV
+        </a>
+        <a href="https://github.com/" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 border border-indigo-600 rounded-md text-indigo-300 hover:bg-indigo-800/40">GitHub</a>
+      </div>
+    </header>
+
+    <main class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Left column -->
+      <section class="md:col-span-2 space-y-6">
+        <article class="glass p-5 rounded-xl border border-neutral-800">
+          <h2 class="text-2xl font-semibold">About</h2>
+          <p class="mt-3 text-slate-300">
+            I’m a pragmatic project leader transitioning into AI solutions and automation engineering. I bring strong experience delivering web and digital projects, introducing process automation, and applying Agile frameworks to increase throughput and product quality. I’m actively positioning my skills toward designing and deploying automation and AI-driven workflows that reduce manual effort and unlock new product capabilities.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="text-xs px-2 py-1 bg-emerald-700/20 rounded">AgilePM Foundation</span>
+            <span class="text-xs px-2 py-1 bg-emerald-700/20 rounded">AgilePM Practitioner</span>
+            <span class="text-xs px-2 py-1 bg-indigo-700/20 rounded">Project Management</span>
+            <span class="text-xs px-2 py-1 bg-indigo-700/20 rounded">Automation</span>
+            <span class="text-xs px-2 py-1 bg-indigo-700/20 rounded">Wrike, GitHub</span>
+          </div>
+        </article>
+
+        <!-- Experience timeline -->
+        <article class="glass p-5 rounded-xl border border-neutral-800">
+          <h2 class="text-2xl font-semibold">Experience</h2>
+
+          <div class="mt-5 space-y-6">
+            <!-- Highfield Group -->
+            <div class="flex gap-4">
+              <div class="flex flex-col items-center">
+                <div class="dot"></div>
+                <div class="h-full w-px bg-neutral-800 flex-1"></div>
+              </div>
+              <div>
+                <div class="flex items-baseline justify-between">
+                  <h3 class="text-xl font-semibold">Software Project Manager — Highfield Group</h3>
+                  <span class="text-sm text-slate-400">1 Sept 2022 — Present</span>
+                </div>
+                <p class="mt-2 text-slate-300">
+                  Leading software delivery for internal and client projects, blending Agile practice, automation and stakeholder management to deliver reliable, maintainable systems. Responsibilities include project planning, sprint facilitation, vendor & contractor coordination, and introducing automation to reduce manual interventions in release and testing workflows.
+                </p>
+
+                <ul class="mt-3 list-disc ml-5 text-slate-300 space-y-1">
+                  <li>Full lifecycle project delivery in Agile environments (planning, retros, demos).</li>
+                  <li>Introduced automation and process improvements for faster delivery and reduced rework.</li>
+                  <li>Coordinated cross-functional teams (developers, designers, external contractors).</li>
+                  <li>Championed tooling improvements and adoption of source control and CI practices.</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Moirae Creative -->
+            <div class="flex gap-4">
+              <div class="flex flex-col items-center">
+                <div class="dot"></div>
+                <div class="h-full w-px bg-neutral-800 flex-1"></div>
+              </div>
+              <div>
+                <div class="flex items-baseline justify-between">
+                  <h3 class="text-xl font-semibold">Studio Manager — Moirae Creative Ltd</h3>
+                  <span class="text-sm text-slate-400">2014 — 2022</span>
+                </div>
+                <p class="mt-2 text-slate-300">
+                  Managed day-to-day studio operations, project delivery, and team performance. Introduced Wrike as a project management system and implemented automations to drive efficiency and reallocate developer time to billable work.
+                </p>
+
+                <details class="mt-3 text-slate-300">
+                  <summary class="cursor-pointer">Key contributions (click to expand)</summary>
+                  <ul class="mt-2 list-disc ml-5 space-y-1">
+                    <li>Replaced an internal C# system with Wrike and implemented automations to reduce manual ticket handling and free developer time for customer work.</li>
+                    <li>Introduced proofing & multi-browser user testing processes (including Lighthouse performance checks and secure resource validation).</li>
+                    <li>Created Project Initiation Documents (PIDs) and Statements of Work for transparent freelance onboarding and scoping.</li>
+                  </ul>
+                </details>
+              </div>
+            </div>
+
+            <!-- Earlier roles summary -->
+            <div class="flex gap-4">
+              <div class="flex flex-col items-center">
+                <div class="dot"></div>
+              </div>
+              <div>
+                <h3 class="text-lg font-medium">Earlier Roles</h3>
+                <p class="mt-2 text-slate-300">Experience in studio and operations roles covering team management, client liaison and technical support — with a focus on process, documentation and delivery quality.</p>
+              </div>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- Projects / Automation demos -->
+        <article class="glass p-5 rounded-xl border border-neutral-800">
+          <h2 class="text-2xl font-semibold">Highlight Projects & Automation Demos</h2>
+          <p class="mt-2 text-slate-300">Short interactive demos that describe how I approach automation and AI-enabled improvements.</p>
+
+          <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="p-4 rounded-lg border border-neutral-800">
+              <h4 class="font-semibold">Wrike Automation & Workflow Redesign</h4>
+              <p class="text-slate-300 mt-1">Implemented automated rules to auto-assign tasks, trigger QA checklists, and move tasks between workflows — increasing billable delivery time and visibility.</p>
+              <button data-project="wrike" class="mt-3 px-3 py-2 bg-indigo-600 rounded text-sm">View approach</button>
+            </div>
+
+            <div class="p-4 rounded-lg border border-neutral-800">
+              <h4 class="font-semibold">Release & Testing Automation (Concept)</h4>
+              <p class="text-slate-300 mt-1">Designed a CI flow concept for automating builds, running Lighthouse checks and notifying stakeholders on regression. Ready to be implemented using GitHub Actions or Azure Pipelines.</p>
+              <button data-project="ci" class="mt-3 px-3 py-2 bg-indigo-600 rounded text-sm">View approach</button>
+            </div>
+          </div>
+
+          <div id="projectDetail" class="mt-4 text-slate-300 hidden p-4 border border-neutral-800 rounded">
+            <!-- filled by JS -->
+          </div>
+        </article>
+
+      </section>
+
+      <!-- Right column -->
+      <aside class="space-y-6">
+        <div class="glass p-5 rounded-xl border border-neutral-800">
+          <h3 class="text-lg font-semibold">Skills & Tools</h3>
+          <div class="mt-3 grid grid-cols-2 gap-2 text-sm">
+            <div>
+              <p class="text-slate-300"><strong>Management</strong></p>
+              <p class="text-slate-400 text-sm">Agile/Scrum, Stakeholder Management, PID, SOW, Team Leadership</p>
+            </div>
+            <div>
+              <p class="text-slate-300"><strong>Automation & Dev</strong></p>
+              <p class="text-slate-400 text-sm">Wrike Automations, Git, GitHub, CI Concepts, Basic C#, SQL, File Transfer</p>
+            </div>
+            <div>
+              <p class="text-slate-300"><strong>Web & Analytics</strong></p>
+              <p class="text-slate-400 text-sm">Google Analytics, GTM, Lighthouse, SEO basics</p>
+            </div>
+            <div>
+              <p class="text-slate-300"><strong>Software</strong></p>
+              <p class="text-slate-400 text-sm">Wrike, Adobe CC, Office 365, Xero, FileZilla</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass p-5 rounded-xl border border-neutral-800">
+          <h3 class="text-lg font-semibold">Certifications</h3>
+          <ul class="mt-3 text-slate-300 space-y-1">
+            <li>AgilePM Foundation</li>
+            <li>AgilePM Practitioner</li>
+          </ul>
+        </div>
+
+        <div class="glass p-5 rounded-xl border border-neutral-800">
+          <h3 class="text-lg font-semibold">Quick Contact</h3>
+          <p class="mt-2 text-slate-300">matthewspiby@hotmail.com</p>
+          <p class="text-slate-300">07932 886271</p>
+          <div class="mt-3 flex gap-2">
+            <a href="mailto:matthewspiby@hotmail.com" class="px-3 py-2 bg-indigo-700 rounded">Email</a>
+            <a href="https://www.linkedin.com/" target="_blank" class="px-3 py-2 border border-indigo-600 rounded">LinkedIn</a>
+          </div>
+        </div>
+
+        <div class="glass p-5 rounded-xl border border-neutral-800">
+          <h3 class="text-lg font-semibold">Mini interactive — Ask about my work</h3>
+          <p class="mt-2 text-slate-300">Type a question to see a structured reply (client-side demo).</p>
+          <input id="qinput" class="w-full mt-2 p-2 rounded bg-neutral-900 border border-neutral-800" placeholder="e.g. How did you automate Wrike?" />
+          <button id="askBtn" class="mt-2 w-full px-3 py-2 bg-indigo-600 rounded">Ask</button>
+
+          <div id="answer" class="mt-3 text-slate-300 hidden p-3 border border-neutral-800 rounded"></div>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="mt-10 text-center text-slate-500 text-sm">
+      Built with ❤️ — Static HTML + Tailwind. For a React/interactive version, I can extend this to include live demos and GitHub Actions-based CI examples.
+    </footer>
+  </div>
+
+  <script>
+    // Project detail toggles
+    const projectDetail = document.getElementById('projectDetail');
+    function showProject(key){
+      let html = '';
+      if(key === 'wrike'){
+        html = '<h4 class="font-semibold">Wrike automation approach</h4>' +
+               '<p class="mt-2">Plan: identify repetitive handoffs, create rule-based automations (status → assignee, tag → due date adjustments), and add QA checklists triggered on state changes. Result: reduced manual triage and more developer capacity for feature work.</p>' +
+               '<pre class="mt-3 p-3 bg-neutral-900 rounded">Example rule: WHEN task moves to "Ready for QA" → ADD checklist "QA: cross-browser, lighthouse, security scan" → NOTIFY #qa-channel</pre>';
+      } else if(key === 'ci'){
+        html = '<h4 class="font-semibold">Release & testing CI concept</h4>' +
+               '<p class="mt-2">Design: use GitHub Actions to run automated builds, run Lighthouse CLI, run unit tests and deploy preview environments. Use status checks to gate releases.</p>' +
+               '<pre class="mt-3 p-3 bg-neutral-900 rounded">Example: "CI pipeline: install → run tests → run lighthouse → if pass → update preview site"</pre>';
+      } else {
+        html = '';
+      }
+      projectDetail.innerHTML = html;
+      projectDetail.classList.toggle('hidden', !html);
+      projectDetail.scrollIntoView({behavior: 'smooth', block: 'center'});
+    }
+
+    document.querySelectorAll('button[data-project]').forEach(btn=>{
+      btn.addEventListener('click', e=>{
+        showProject(e.currentTarget.dataset.project);
+      });
+    });
+
+    // Mini interactive QnA (client-side static)
+    const askBtn = document.getElementById('askBtn');
+    const qinput = document.getElementById('qinput');
+    const answer = document.getElementById('answer');
+
+    const canned = [
+      { q: /wrike|automation/i, a: 'I introduced Wrike and configured automations to reduce manual task triage, auto-assign QA checklists, and trigger notifications — which increased billable time spent on customer projects.' },
+      { q: /agile|sprint|scrum/i, a: 'I apply Agile ceremonies (planning, daily standups, retros) and prioritise backlog grooming to keep delivery predictable. I use PID/SOW documents to ensure clarity during onboarding.' },
+      { q: /ci|pipeline|github actions|lighthouse/i, a: 'I design CI pipelines to run automated tests and Lighthouse audits; for deployment I prefer preview environments and gated merges with status checks.' },
+      { q: /experience|moirae/i, a: 'At Moirae Creative I led the studio, introduced Wrike and proofing/testing processes, and created PIDs and SOWs to improve transparency.' },
+      { q: /default/i, a: 'I combine practical project management with automation-first approaches. If you share the problem, I’ll recommend a lightweight automation or AI-driven approach.' },
+    ];
+
+    function getCannedAnswer(text){
+      for(const row of canned){
+        if(row.q.test(text)) return row.a;
+      }
+      return canned[canned.length-1].a;
+    }
+
+    askBtn.addEventListener('click', ()=>{
+      const q = qinput.value.trim();
+      if(!q) return;
+      answer.textContent = 'Thinking...';
+      answer.classList.remove('hidden');
+      setTimeout(()=>{
+        answer.textContent = getCannedAnswer(q);
+      }, 350);
+    });
+
+    qinput.addEventListener('keydown', (e)=>{
+      if(e.key === 'Enter') askBtn.click();
+    });
+  </script>
+</body>
+</html>
